@@ -162,8 +162,6 @@ $stats = $roomModel->getRoomStatistics();
                         <th>Room Number</th>
                         <th>Capacity</th>
                         <th>Equipment Count</th>
-                        <th>Technician</th>
-                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -190,28 +188,8 @@ $stats = $roomModel->getRoomStatistics();
                             <?php endif; ?>
                         </td>
                         <td>
-                            <?php if ($room['technician_name']): ?>
-                            <?php echo htmlspecialchars($room['technician_name']); ?>
-                            <?php else: ?>
-                            <span class="text-muted">Not Assigned</span>
-                            <?php endif; ?>
-                        </td>
-                        <td>
-                            <?php 
-                            $statusClass = [
-                                'active' => 'success',
-                                'inactive' => 'danger',
-                                'under maintenance' => 'warning'
-                            ];
-                            $class = $statusClass[$room['status']] ?? 'secondary';
-                            ?>
-                            <span class="badge bg-<?php echo $class; ?>">
-                                <?php echo ucfirst($room['status']); ?>
-                            </span>
-                        </td>
-                        <td>
                             <div class="btn-group">
-                                <a href="../rooms/view.php?id=<?php echo $room['room_id']; ?>" class="btn btn-sm btn-info" title="View">
+                                <a href="view_room.php?id=<?php echo $room['room_id']; ?>" class="btn btn-sm btn-info" title="View">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="edit_room.php?id=<?php echo $room['room_id']; ?>" class="btn btn-sm btn-primary" title="Edit">

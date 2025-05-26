@@ -12,8 +12,8 @@ require_once __DIR__ . '/../utils/Helpers.php';
 // Initialize Auth
 $auth = Auth::getInstance();
 
-// Check if user is admin, redirect if not
-if (!$auth->isAdmin()) {
+// Check if user is admin or technician, redirect if not
+if (!$auth->isAdmin() && !$auth->isLabTechnician()) {
     header('Location: ../access-denied.php');
     exit;
 }

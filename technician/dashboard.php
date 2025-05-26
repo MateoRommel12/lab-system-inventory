@@ -97,7 +97,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <p class="stats-label">Pending Requests</p>
             </div>
             <div class="card-footer bg-transparent">
-                <a href="/maintenance/pending.php" class="btn btn-sm btn-warning">View Requests</a>
+                <a href="<?php echo Helpers::url('maintenance/pending.php'); ?>" class="btn btn-sm btn-warning">View Requests</a>
             </div>
         </div>
     </div>

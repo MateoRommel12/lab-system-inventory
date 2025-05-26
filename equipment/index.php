@@ -15,6 +15,7 @@ $auth = Auth::getInstance();
 // Set page title
 $pageTitle = "Equipment Management";
 
+
 // Include header
 require_once __DIR__ . '/../includes/header.php';
 
@@ -62,7 +63,7 @@ $statuses = ['active', 'inactive', 'maintenance', 'retired'];
             <i class="fas fa-plus me-2"></i>Add New Equipment
         </a>
         <?php endif; ?>
-        <a href="./movements.php" class="btn btn-info ms-2">
+        <a href="./movements.php" class="btn btn-info ms-3">
             <i class="fas fa-exchange-alt me-2"></i>View Movements
         </a>
     </div>
@@ -151,7 +152,9 @@ $statuses = ['active', 'inactive', 'maintenance', 'retired'];
                         <th>Serial Number</th>
                         <th>Room</th>
                         <th>Condition</th>
+                        <?php if ($auth->isAdmin()): ?>
                         <th>Actions</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -177,29 +180,20 @@ $statuses = ['active', 'inactive', 'maintenance', 'retired'];
                                 <?php echo ucfirst($item['equipment_condition']); ?>
                             </span>
                         </td>
+                        <?php if ($auth->isAdmin()): ?>
                         <td>
                             <div class="btn-group">
-                                <a href="view.php?id=<?php echo $item['equipment_id']; ?>" class="btn btn-sm btn-info">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <?php if ($auth->canManageEquipment()): ?>
-                                <a href="edit.php?id=<?php echo $item['equipment_id']; ?>" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                
-
-                                <!-- Direct fallback link in case modal doesn't work -->
                                 <a href="move.php?id=<?php echo $item['equipment_id']; ?>" class="btn btn-sm btn-outline-success">
                                     <i class="fas fa-arrow-right"></i> 
                                 </a>
-                                <?php endif; ?>
                                 <?php if ($auth->canBorrowEquipment()): ?>
-                                <a href="../borrowing/borrow.php?equipment_id=<?php echo $item['equipment_id']; ?>" class="btn btn-sm btn-warning">
+                                <a href="../borrowing/borrow.php?equipment_id=<?php echo $item['equipment_id']; ?>" class="btn btn-sm btn-warning ms-2">
                                     <i class="fas fa-hand-holding"></i>
                                 </a>
                                 <?php endif; ?>
                             </div>
                         </td>
+                        <?php endif; ?>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -424,7 +418,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<?php
-// Include footer
-require_once '../includes/footer.php';
-?> 
+<?php require_once '../includes/footer.php'; ?> 

@@ -16,6 +16,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 
+
 $maintenanceId = $_GET['id'];
 $maintenance = $maintenanceModel->getMaintenanceWithDetails($maintenanceId);
 
@@ -49,6 +50,6 @@ require_once __DIR__ . '/../includes/header.php';
         </div>
     </div>
     
-    <a href="../technician/dashboard.php" class="btn btn-primary">Back to Dashboard</a>
+    <a href="<?php echo APP_URL . '/student/dashboard.php'; ?>" class="btn btn-primary">Back to Dashboard</a>
 </div>
 <?php require_once __DIR__ . '/../includes/footer.php'; ?> 

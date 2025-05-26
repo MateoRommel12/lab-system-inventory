@@ -1,6 +1,10 @@
 <?php
 require_once '../config/config.php';
 require_once '../utils/Helpers.php';
+require_once '../utils/Auth.php';
+
+// Initialize Auth
+$auth = Auth::getInstance();
 
 // Set page title
 $pageTitle = "View Equipment";
