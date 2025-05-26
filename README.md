@@ -38,8 +38,9 @@ mysql -u your_username -p your_database_name < sql/schema.sql
 ```
 
 4. Configure the application:
-   - Copy `config/database.example.php` to `config/database.php`
    - Update the configuration values in `config/database.php`
+   - Make sure to set the correct database credentials
+   - Configure your email settings
 
 5. Set up your web server:
    - Point your web server to the project directory
@@ -54,6 +55,7 @@ mysql -u your_username -p your_database_name < sql/schema.sql
 2. Email Configuration:
    - Configure SMTP settings in `config/database.php`
    - For Gmail, use App Password instead of regular password
+   - Update SMTP_USER and SMTP_PASS with your email credentials
 
 3. Application Settings:
    - Update `APP_URL` to match your server configuration
@@ -65,6 +67,8 @@ mysql -u your_username -p your_database_name < sql/schema.sql
 - Keep your composer dependencies updated
 - Use strong passwords for database and email accounts
 - Regularly backup your database
+- Keep your PHP version updated
+- Use HTTPS in production
 
 ## Contributing
 
