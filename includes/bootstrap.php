@@ -1,6 +1,7 @@
 <?php
-// Include configuration file
+// Include configuration files
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
 
 // Include required utility classes
 require_once __DIR__ . '/../utils/Helpers.php';
