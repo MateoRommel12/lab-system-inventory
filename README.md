@@ -1,83 +1,84 @@
-# Lab Management System
+# Laboratory Management System
 
-A comprehensive laboratory management system for educational institutions to manage equipment, borrowing, maintenance, and user roles.
+A comprehensive web-based system for managing laboratory rooms, equipment, and maintenance.
 
 ## Features
 
-- User authentication and role-based access control
-- Equipment management and tracking
-- Borrowing system for lab equipment
-- Maintenance scheduling and tracking
-- Room management
-- User profile management
-- Email notifications
+- Room Management
+  - Add, edit, and view rooms
+  - Track room capacity and equipment
+  - Room status monitoring
+
+- Equipment Management
+  - Equipment inventory tracking
+  - Equipment status monitoring
+  - Maintenance scheduling
+
+- User Management
+  - Role-based access control
+  - User authentication
+  - Activity logging
 
 ## Requirements
 
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
-- Composer
-- Web server (Apache/Nginx)
+- Apache/Nginx web server
+- XAMPP (recommended for local development)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/MateoRommel12/lab_management_.git
-cd lab_management_
+git clone https://github.com/yourusername/lab_management_.git
 ```
 
-2. Install dependencies:
-```bash
-composer install
-```
+2. Set up your web server (XAMPP):
+   - Place the project in your `htdocs` directory
+   - Start Apache and MySQL services
 
-3. Create a database and import the schema:
-```bash
-mysql -u your_username -p your_database_name < sql/schema.sql
-```
+3. Create a database:
+   - Open phpMyAdmin
+   - Import the database schema from `sql/database.sql`
+   - Import the database schema from `sql/update_audit_logs.sql`
+   - Import the database schema from `sql/password_resets.sql`
 
-4. Configure the application:
-   - Update the configuration values in `config/database.php`
-   - Make sure to set the correct database credentials
-   - Configure your email settings
+4. Access the application:
+   - Open your browser
+   - Navigate to `http://localhost/lab_management_`
 
-5. Set up your web server:
-   - Point your web server to the project directory
-   - Ensure the web server has write permissions for uploads and logs
+## Default Login
 
-## Configuration
-
-1. Database Configuration:
-   - Update database credentials in `config/database.php`
-   - Set appropriate database host, username, password, and database name
-
-2. Email Configuration:
-   - Configure SMTP settings in `config/database.php`
-   - For Gmail, use App Password instead of regular password
-   - Update SMTP_USER and SMTP_PASS with your email credentials
-
-3. Application Settings:
-   - Update `APP_URL` to match your server configuration
-   - Modify other application settings as needed
+- Admin:
+  - Username: admin
+  - Password: admin123
 
 ## Security
 
-- Never commit sensitive configuration files
-- Keep your composer dependencies updated
-- Use strong passwords for database and email accounts
-- Regularly backup your database
-- Keep your PHP version updated
-- Use HTTPS in production
+- Change default passwords after installation
+- Keep your configuration files secure
+- Regularly update dependencies
+- Follow security best practices
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the development team. 
+
+## Reset Password Problem
+
+Ibahin niyo nalang yung mismong ip address na nakalagay sa `config/config.php`
+
+- Punta kayo sa Command Prompt at i-type niyo lang ay "ipconfig"
+- Hanapin niyo ang may IPv4 at i-copy at paste niyo dun sa mismong `config/config.php` line 10. Tapos subukan niyo ulit irun pag hindi gumana bobo ung gumawa hahhaha

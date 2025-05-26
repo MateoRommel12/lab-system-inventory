@@ -1,6 +1,44 @@
-# Dependencies
+# XAMPP specific
+/xampp/
+/htdocs/
+/mysql/data/
+/apache/logs/
+
+# PHP specific
 /vendor/
+.env
+.env.*
+!.env.example
 composer.lock
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+error_log
+
+# Cache
+*.cache
+/cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Configuration files with sensitive data
+config/database.php
+config/config.php
 
 # Environment files
 .env
