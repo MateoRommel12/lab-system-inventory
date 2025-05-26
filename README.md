@@ -81,4 +81,4 @@ For support, please open an issue in the GitHub repository or contact the develo
 Ibahin niyo nalang yung mismong ip address na nakalagay sa `config/config.php`
 
 - Punta kayo sa Command Prompt at i-type niyo lang ay "ipconfig"
-- Hanapin niyo ang may IPv4 at i-copy at paste niyo dun sa mismong `config/config.php` line 10. Tapos subukan niyo ulit irun pag hindi gumana bobo ung gumawa hahhaha
+- Hanapin niyo ang may IPv4 at i-copy at paste niyo dun sa mismong `config/config.php` line 10. Tapos subukan niyo ulit irun pag hindi gumana bahala na si batman
